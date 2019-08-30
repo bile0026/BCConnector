@@ -1,7 +1,7 @@
 # BCConnector
 Rajant BCConnector 
 
-This docker container will install the Rajant BCConnector software. It is currently on version 11.19.1.7. 
+This docker container will install the Rajant BCConnector software. It is currently on version 11.20.0.10. 
 
 You will need to create a directory on your host for each instance of BCConnector you would like to run. 
 We will attach these as persistent storage for your docker container. Otherwise all your config file 
@@ -13,10 +13,6 @@ BCConnector instance, you can use auto-discovery. If they are on separate subnet
 --proxy option in a shortcut to bcc11.exe. (i.e. bcc11.exe --proxy=<host_ip>). 
 
 Run docker with:
-docker run -d -name <your_name_here> --v <host_path>:/opt/rajant-bcconnector -p 23000:23000 -p 35057:35057 zbiles/bcconnector
+docker run -d --name <your_name_here> -v <host_path>:/opt/rajant-bcconnector -p 23000:23000 -p 35057:35057 --restart unless-stopped zbiles/bcconnector
 
-Once it's up and runing, you'll need to edit the config file in the host location with the proper settings. 
-
-You will likely need to use the manual discovery option, unless your container is running on the same subnet as
-your breadcrumbs. This involves creating a .txt file of IP addresses in the same folder and entering that 
-filename in the manual breadcrumb discovery parameter. 
+Once it's up and runing, you'll need to edit the config by logging into the BCConnector. It should show up in the list in BCCommander if you are on the same subnet, otherwise, use the --proxy option (see above). You might have to go into View>Show BCConnectors tab. Then right-click on the Connector you wish to configure and select configure. Note: configuration requires CO permissions. 
