@@ -1,7 +1,7 @@
 # BCConnector
 Rajant BCConnector 
 
-This docker container will install the Rajant BCConnector software. It is currently on version 11.20.0.10. 
+This docker container will install the Rajant BCConnector software. It is currently on version 11.21.0.10. 
 
 You will need to create a directory on your host for each instance of BCConnector you would like to run. 
 We will attach these as persistent storage for your docker container. Otherwise all your config file 
